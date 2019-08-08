@@ -7,11 +7,14 @@ import com.bridgelabz.utility.Utility;
 public class Quadratic {
 
 	public static void main(String[] args) {
-		int a,b,c;
-		double delta;
-		
 		Scanner scanner = new Scanner(System.in);
 		Utility utility = new Utility();
+		
+		int a,b,c;
+		double delta,root1,root2,sqrtDelta = 0;
+		
+
+		
 		System.out.println("Enter number a : ");
 		a = scanner.nextInt();
 
@@ -22,7 +25,12 @@ public class Quadratic {
 		c = scanner.nextInt();
 		
 		delta = utility.deltaoperation(a, b, c);
-		System.out.println("Delta value : " + delta);
+		System.out.println("delta : " + delta);
+		root1 = utility.QuadraticEqn(a,b,delta);
+		System.out.println("root1 : " + root1);
+		
+		root2 = utility.QuadraticEqn2(a,b,delta);
+		System.out.println("root2 : " + root2);
 		
 		scanner.close();
 

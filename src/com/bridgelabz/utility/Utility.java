@@ -139,10 +139,33 @@ public class Utility {
 	}
 	
 	public double deltaoperation(int a,int b,int c) {
-		int delta = ( b * b )-( 4 * a * c);
-		double sqrtDelta = Math.sqrt(delta);
+		double delt = ( b * b )-( 4 * a * c);
+			double delta = Math.abs(delt);
+		return delta;
+	}
+	
+	public double QuadraticEqn(int a,int b,double delta) {
+		double root1,d;
+		d = Math.sqrt(delta);
+		root1 = (-b + d) / (2 * a);
+		return root1;
 		
-		return sqrtDelta;
+	}
+	
+
+
+	public double QuadraticEqn2(int a,int b,double delta) {
+		double root1,d;
+		d = Math.sqrt(delta);
+		root1 = (-b - d) / (2 * a);
+		return root1;
+		
+	}
+	
+	public double distance(int x, int y) {
+		int d = (x*x + y*y);
+		double distance = Math.sqrt(d);
+		return distance;
 	}
 	
 }
