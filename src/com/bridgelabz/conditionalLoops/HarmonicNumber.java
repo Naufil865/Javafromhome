@@ -1,5 +1,5 @@
 /****************************************************************************** *  
- *  Purpose: Calculate Distance
+ *  Purpose: Harmonic Number
  *
  *  @author  Naufil
  *  @version 1.0
@@ -7,33 +7,22 @@
  *
  ******************************************************************************/
 
-package com.bridgelabz.functional;
+package com.bridgelabz.conditionalLoops;
 
 import java.util.Scanner;
 
 import com.bridgelabz.utility.Utility;
 
-public class Distance {
+public class HarmonicNumber {
 
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
 		Utility utility = new Utility();
-		
-		int x,y;
-		double result;
+		int number;
+		System.out.println("Enter Number Uptil you want to Find Harmonic");
+		number=scanner.nextInt();
 
-		System.out.println("Distance x: ");
-		x = scanner.nextInt();
-	
-		System.out.println("Distance y: ");
-		y = scanner.nextInt();
-		
-		result = utility.distance(x, y);
-		System.out.println("Distance of x and y " + result);
-		
-		
-		scanner.close();
-				
+		utility.PrintHarmonic(number);
+scanner.close();
 	}
-
 }
