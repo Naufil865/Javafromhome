@@ -23,9 +23,11 @@ public class LeapYear {
 		year = scanner.nextInt();
 		
 		result = utility.leapyear(year);
+
 		//System.out.println(year);
 		System.out.println(result);
-		scanner.close();
+
+	scanner.close();
 	}
 
 }

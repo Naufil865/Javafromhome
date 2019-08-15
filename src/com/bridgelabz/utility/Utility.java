@@ -162,10 +162,200 @@ public class Utility {
 		
 	}
 	
+
+	/**
+	 * @param x distance of x in integer 
+	 * @param y	distance of y in integer
+	 * @return distance 
+	 */
+
 	public double distance(int x, int y) {
 		int d = (x*x + y*y);
 		double distance = Math.sqrt(d);
 		return distance;
 	}
 	
+
+	/**
+	 * @param min integer value 
+	 * @param max integer value	
+	 * @return random
+	 */
+	public int getRandomNumber(int min ,int max) {
+		int range = max - min + 1;
+		int random = (int)(Math.random() * range ) + 1;
+		return random;
+	}
+	
+	
+	/**
+	 * @param a input of array index 1
+	 * @param b input of array index 2
+	 * @return compare and return minimum number
+	 */
+	public double mathMinNumber(double a, double b) {
+		return Math.min(a, b);
+	}
+	
+	/**
+	 * @param a input of array index 1
+	 * @param b input of array index 2
+	 * @return compare and return maximum
+	 */
+	public double mathMaxNumber(double a, double b) {
+		return Math.max(a, b);
+	}
+	
+	/**
+	 * @return random number
+	 */
+	public double mathRandomNumber() {
+		return Math.random();
+	}
+	
+	/**
+	 * Purpose: Method is written for Converting Temperature Fahrenheit to Celsius
+	 * 
+	 * @param temperatureInFerenheit
+	 * @return temperatureInCelcius return temperature in celsius
+	 */
+	public double FahrenheitToCelsius(double temperatureInFerenheit) {
+		double temperatureInCelcius;
+		temperatureInCelcius = ((temperatureInFerenheit - 32) * 5) / 9;
+		return temperatureInCelcius;
+	}
+
+	/**
+	 * Purpose: Method is written for Converting Temperature Celcius to Fahrenheit
+	 * 
+	 * 
+	 * @param temperatureInCelsius
+	 * @return temperatureInFahrenheit return temperature in fahrenheit
+	 */
+	public double CelsiusToFahrenheit(double temperatureInCelsius) {
+		double temperatureInFahrenheit;
+		temperatureInFahrenheit = ((temperatureInCelsius * 9) / 5) + 32;
+		return temperatureInFahrenheit;
+	}
+
+	
+	/**
+	 * @param velocity
+	 * @return
+	 */
+	public double velocityIntoSpeed(int velocity) {
+		double speed;
+		speed = velocity * 0.609;
+		return speed;
+	}
+
+
+	
+	/**
+	 * @param tempinfahrenheit 
+	 * @param speed
+	 * @return
+	 */
+	public double calculateWindChill(double tempinfahrenheit , double speed) {
+		double a,b,c,windchill;
+		a = 0.6215 * tempinfahrenheit;
+		b = 0.4275 * tempinfahrenheit;
+		c = b - 35.75;
+		windchill = 35.74 + a + c * speed;
+		//windchill cannot be negative so abs
+		windchill = Math.abs(windchill);
+		return windchill;
+		
+	}
+	
+	/**
+	 * @param degree
+	 * @return
+	 */
+	public double findRadian(int degree) {
+		return Math.toRadians(degree);
+	}
+	
+	public double findSin(double radian) {
+		return Math.sin(radian);
+	}
+	
+	public double findCos(double radian) {
+		return Math.cos(radian);
+	}
+	
+	public double findTan(double radian) {
+		return Math.tan(radian);
+	}
+	
+	public double findCot(double radian) {
+		double cot;
+		cot = 1 / Math.tan(radian);
+		return cot;
+	}
+	
+	public double findSec(double radian) {
+		double sec;
+		sec =  1 / Math.cos(radian);
+		return sec;
+	}
+	
+	public double findCosec(double radian){
+		double cosec;
+		cosec = 1 / Math.sin(radian); 
+		return cosec;
+	}
+	
+	/**
+	 * @param timescoin
+	 */
+	public void flipCoin(int timescoin) {
+		double percentagehead,percentagetail;
+		int headCount=0,tailCount=0;
+		
+		for(int i =0 ; i < timescoin ; i++) {
+			if(Math.random() < .5) {
+				System.out.println("Heads");
+				headCount++;
+			}
+			else {
+				System.out.println("Tails");
+				tailCount++;
+			}
+		}
+		percentagehead = (int) headCount * 100 / timescoin;
+		percentagetail = (int) tailCount * 100 / timescoin;
+		System.out.println("Percentage of Heads is : " + percentagehead);
+		System.out.println("Percentage of Tails is : " + percentagetail);
+
+	}
+	
+	/**
+	 * @param number
+	 * @param powerValue
+	 * @return
+	 */
+	public int PowerOfTwo(int number, int powerValue) {
+		int result;
+		result = (int) Math.pow(number, powerValue);
+		return result;
+	}
+	
+	/**
+	 * @param number
+	 */
+	public void PrintHarmonic(int number) {
+		System.out.print("H=");
+		for (int i = 1; i <= number; i++) {
+			if (i != number) {
+				System.out.print("1/" + i);
+				System.out.print(" + ");
+			} else {
+				System.out.print("1/" + i);
+			}
+
+		}
+	}
+	
+
 }

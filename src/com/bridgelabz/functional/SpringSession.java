@@ -27,6 +27,8 @@ public class SpringSession {
 		boolean res;
 		res = utility.springseason(m, d);
 		System.out.println("Result : " + res);
+
 		scanner.close();
+
 	}
 }

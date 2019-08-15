@@ -1,6 +1,5 @@
-
 /****************************************************************************** *  
- *  Purpose: Calculate Distance
+ *  Purpose: Calculate Coin Flip
  *
  *  @author  Naufil
  *  @version 1.0
@@ -14,28 +13,20 @@ import java.util.Scanner;
 
 import com.bridgelabz.utility.Utility;
 
-public class Distance {
+public class FlipCoin {
 
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
 		Utility utility = new Utility();
 		
-		int x,y;
-		double result;
-
-		System.out.println("Distance x: ");
-		x = scanner.nextInt();
-	
-		System.out.println("Distance y: ");
-		y = scanner.nextInt();
-		
-		result = utility.distance(x, y);
-		System.out.println("Distance of x and y " + result);
-		
-
+		int coin;
+		System.out.println("Enter the nUmber of time coin flip : ");
+		coin = scanner.nextInt();
+		utility.flipCoin(coin);
 		scanner.close();
-
-				
+		
+		
+		
 	}
 
 }
