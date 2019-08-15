@@ -11,7 +11,7 @@ public class Quadratic {
 		Utility utility = new Utility();
 		
 		int a,b,c;
-		double delta,root1,root2,sqrtDelta = 0;
+		double delta,root1,root2;
 
 		
 
