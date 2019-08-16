@@ -357,5 +357,26 @@ public class Utility {
 		}
 	}
 	
-
+	/**
+	 * @param day
+	 * @param month
+	 * @param year
+	 * @return
+	 */
+	public int CalculateDayOfWeek(int day,int month,int year) {
+		int y0,m0,d0,x;
+		y0 = year - (14 - month) / 12 ;
+		x  = y0 + y0 / 4 - y0 / 100 + y0 / 400;
+		m0 = month + 12 * ((14 - month) / 12) - 2;
+		d0 = (day + x + 31 * m0 / 12) % 7;
+		return d0;
+	}
+	
+	public double calulateCarLoan(double p,int y,double r) {
+		double payment,n,Rate;
+		n = 12  * y;
+		Rate = r / (12 * 100); 
+		payment = p * Rate / (1 - Math.pow(1 + r, -n));
+		return payment;
+	}
 }
