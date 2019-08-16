@@ -379,4 +379,48 @@ public class Utility {
 		payment = p * Rate / (1 - Math.pow(1 + r, -n));
 		return payment;
 	}
+	
+	public double CalulateSqrt(int c) {
+		double t,epsilon;
+		t = c;
+		epsilon = 1e-15;
+		while(Math.abs(t - c/t) > epsilon * t)
+		{
+			t = ((c / t) + t) / 2;
+		}
+		return t;
+	}
+	
+	public void CalculateGamlingSimulator(int stake,int goal,int trails) {
+		int percentagewin = 0;
+		int tempstake = stake;
+		int trail = 0;
+		int win = 0;
+		
+		for(int i = 1 ; i <= trails ; i++) {
+			while(tempstake > 0 && tempstake < goal) {
+				if(Math.random() > 0.5) {
+					tempstake++;
+					trail++;
+					///win
+					
+				}else {
+					tempstake--;
+					trail++;
+					
+					///loose
+				}
+				if(tempstake == goal) {
+					win++;
+				}
+			}
+		}
+		percentagewin = win * 100 / trails;
+		System.out.println("Game Won : " + win);
+		System.out.println("Percentage Win : " + percentagewin);
+		System.out.println("Average number of bets Made :" + trail / trails);
+
+	
+	}
+	
 }
