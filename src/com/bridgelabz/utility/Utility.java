@@ -391,6 +391,11 @@ public class Utility {
 		return t;
 	}
 	
+	/**
+	 * @param stake
+	 * @param goal
+	 * @param trails
+	 */
 	public void CalculateGamlingSimulator(int stake,int goal,int trails) {
 		int percentagewin = 0;
 		int tempstake = stake;
@@ -419,8 +424,182 @@ public class Utility {
 		System.out.println("Game Won : " + win);
 		System.out.println("Percentage Win : " + percentagewin);
 		System.out.println("Average number of bets Made :" + trail / trails);
+	}
 
-	
+	/**
+	 * @param number
+	 * @return
+	 */
+	public boolean PrimeNumber(int number) {
+		if (number == 0 || number == 1) {
+			return false;
+		} else {
+			for (int i = 2; i <= number / 2; i++) {
+				if (number % i == 0) {
+					return false;
+				}
+			}
+			return true;
+		}
 	}
 	
+	public int SwapNibbles(int decToBinary) {
+		return (((decToBinary & 0x0F) << 4) | ((decToBinary & 0xF0) >> 4));
+
+	}
+	
+	public void PatternForK() {
+		for(int i=1 ; i <= 9 ; i++ ) {
+			for(int j=1 ; j<=13 ; j++) {
+				if(i == 1) {
+					if(j > 2 && j <= 10)
+						System.out.print(" ");
+					else
+						System.out.print("*");
+				}
+				if(i == 2) {
+					if(j > 2 && j <= 8)
+						System.out.print(" ");
+					else if(j > 11)
+						System.out.print(" ");
+					else
+						System.out.print("*");
+				}
+				if(i == 3) {
+					if( j > 2 && j <= 6)
+						System.out.print(" ");
+					else if( j > 9)
+						System.out.print(" ");
+					else
+						System.out.print("*");
+				}
+				if(i == 4) {
+					if (j > 2 && j <= 4)
+						System.out.print(" ");
+					else if(j > 7)
+						System.out.print(" ");
+					else
+						System.out.print("*");
+				}
+				if (i == 5) {
+					if (j > 5 && j <= 13)
+						System.out.print(" ");
+					else
+						System.out.print("*");
+				}
+				if(i == 6) {
+					if(j > 2 && j <= 4 )
+						System.out.print(" ");
+					else if(j > 7)
+						System.out.print(" ");
+					else
+						System.out.print("*");
+				}
+				if(i == 7 ) {
+					if(j > 2 && j <= 6)
+						System.out.print(" ");
+					else if(j > 9)
+						System.out.print(" ");
+					else
+						System.out.print("*");
+				}
+				if(i == 8 ) {
+					if(j > 2 && j <= 8)
+						System.out.print(" ");
+					else if(j > 11)
+						System.out.print(" ");
+					else
+						System.out.print("*");
+				}
+				if(i == 9) {
+					if(j > 2 && j <= 10 ) {
+						System.out.print(" ");
+					}
+						else {
+							System.out.print("*");
+					}
+				}
+				
+				
+			}
+			System.out.println();
+		}
+		
+			
+	}
+	
+	public void PatternPrintD() {
+		for(int i=1 ; i <= 9 ;i++) {
+			for(int j=1 ; j <=13 ; j++) {
+				switch(i) {
+				case 1: 
+					if(j > 10 && j <= 13) {
+					System.out.print("");
+					}else
+					{
+					System.out.print("*");
+					}
+					break;
+				case 2:
+					if(j > 2 && j <= 10)
+						System.out.print(" ");
+					else
+					
+						System.out.print("*");
+					break;
+				case 3:
+					if(j > 2 && j <= 10)
+						System.out.print(" ");
+					else
+					
+						System.out.print("*");
+					break;
+			
+				case 4:
+					if(j > 2 && j <= 10)
+						System.out.print(" ");
+					else
+					
+						System.out.print("*");
+					break;
+				case 5:
+					if(j > 2 && j <= 10)
+						System.out.print(" ");
+					else
+					
+						System.out.print("*");
+					break;
+				case 6:
+					if(j > 2 && j <= 10)
+						System.out.print(" ");
+					else
+					
+						System.out.print("*");
+					break;
+				case 7:
+					if(j > 2 && j <= 10)
+						System.out.print(" ");
+					else
+					
+						System.out.print("*");
+					break;
+				case 8:
+					if(j > 2 && j <= 10)
+						System.out.print(" ");
+					else
+					
+						System.out.print("*");
+					break;
+				case 9:
+					if(j > 10 && j <=13 )
+						System.out.print("");
+					else
+						System.out.print("*");
+				}
+			}
+			System.out.println();
+		}
+	}
 }
+
+
