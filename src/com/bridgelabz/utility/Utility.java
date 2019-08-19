@@ -528,6 +528,9 @@ public class Utility {
 			
 	}
 	
+	/**
+	 * 
+	 */
 	public void PatternPrintD() {
 		for(int i=1 ; i <= 9 ;i++) {
 			for(int j=1 ; j <=13 ; j++) {
@@ -599,6 +602,105 @@ public class Utility {
 			}
 			System.out.println();
 		}
+	}
+	
+	/**
+	 * @param x
+	 * @return
+	 */
+	public double calulateAngleX(int x) {
+		x = x % (2 * 180);
+		return x;
+	}
+	
+	public int CalulateFactorial(int n) {
+		int fact = 1;
+		for(int i = 1 ; i <= n ; i++) {
+			fact = fact * i;
+		}
+		return fact;		
+	}
+	
+	/**
+	 * @param angleX
+	 * @param oddseries
+	 */
+	public void calulateSinx(double angleX,int oddseries) {
+		
+		int count = 1;
+		System.out.print("Sin"+ angleX + " = " + angleX + " - ");
+		for(int i = 3 ;i <= oddseries ; i=i+2) {
+			if(count % 2 !=0) {
+				System.out.print(Math.pow(angleX, i) + " / " + CalulateFactorial(i));
+				if(i != oddseries) {
+					System.out.print(" + ");
+				}
+				count++;
+			}else {
+				System.out.print(Math.pow(angleX, i)+ " / " + CalulateFactorial(i));
+				if( i !=oddseries) {
+					System.out.print(" - ");
+				}
+			}
+		}
+	}
+	
+	/**
+	 * @param angleX
+	 * @param evenseries
+	 */
+	public void calulateCosx(double angleX , int evenseries) {
+		int count = 1;
+		System.out.print("cos"+ angleX + " = " + " 1 - ");
+		for(int i = 2 ; i<=evenseries ; i=i+2) {
+			if(count % 2 == 0 ) {
+			System.out.print(Math.pow(angleX, i) + " / " + CalulateFactorial(i));
+				if(i != evenseries) {
+					System.out.print(" + ");
+				}
+				count++;
+			}else {
+				System.out.print(Math.pow(angleX, i) + " / " + CalulateFactorial(i));
+				if(i != evenseries) {
+					System.out.print( " - " );
+				}
+			}
+		}
+	}
+	
+	public int findRepeatedNumber(int[] arr) {
+		for(int i=0 ; i < arr.length ; i++) {
+			for(int j = i + 1 ; j < arr.length ;j++) {
+				if(arr[i] == arr[j]) {
+					return arr[i];
+				}
+			}
+		}
+		return 0;
+	}
+	
+	public int SecondSmallest(int small ,int secondsmall,int []arr) {
+		for(int i=0 ; i<arr.length ; i++) {
+			if(arr[i] < small) {
+				secondsmall = small;
+				small = arr[i];
+			}else if(arr[i] < secondsmall && arr[i] != small) {
+				secondsmall = arr[i];
+			}
+		}
+		return secondsmall;
+	}
+	
+	public int SecondLargest(int large,int secondlarge,int []arr) {
+		for(int i=0;i<arr.length;i++) {
+			if(arr[i] > large) {
+				secondlarge = large;
+				large = arr[i];				
+			}else if(arr[i] < secondlarge && arr[i] != large) {
+				secondlarge = arr[i];
+			}
+		}
+		return secondlarge;
 	}
 }
 
